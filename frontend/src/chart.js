@@ -1,0 +1,131 @@
+// <div>
+// <canvas id='myChart'>
+//
+// </canvas>
+// </div>
+// <script>
+
+  let myChart = document.getElementById('myChart').getContext('2d');
+  // Global Options
+  Chart.defaults.global.defaultFontFamily = 'Lato';
+  Chart.defaults.global.defaultFontSize = 14;
+  Chart.defaults.global.defaultFontColor = '#777';
+  // var ctx = document.getElementById("myChart");
+  let massPopChart = new Chart(myChart, {
+    type: 'scatter',
+    data: {
+      datasets: [
+        {
+          label: 'BTC',
+          data: [{x: moment().subtract(30, 'days'),y: 117.6},
+                {x: moment().subtract(28, 'days'), y: 108.34},
+                {x: moment().subtract(26, 'days'),y: 127.43},
+                {x: moment().subtract(24, 'days'),y: 140.75},
+                {x: moment().subtract(22, 'days'),y: 121.94},
+                {x: moment().subtract(20, 'days'),y: 109.1},
+                {x: moment().subtract(18, 'days'),y: 112.34},
+                {x: moment().subtract(16, 'days'),y: 115.85},
+                {x: moment().subtract(14, 'days'),y: 125.02},
+                {x: moment().subtract(12, 'days'),y: 107.23},
+                {x: moment().subtract(10, 'days'),y: 112.34},
+                {x: moment().subtract(8, 'days'),y: 125.11},
+                {x: moment().subtract(6, 'days'),y: 125.11},
+                {x: moment().subtract(4, 'days'),y: 114.87},
+                {x: moment().subtract(2, 'days'),y:  112.12},
+                {x: moment().format(),y:  132.72}],
+          showLine: true,
+          fill: false,
+          borderColor: 'rgba(0, 200, 0, 1)'
+        },
+        {
+          label: 'EBAY',
+          data: [{x: moment().subtract(30, 'days'),y: 36.4},
+                {x: moment().subtract(28, 'days'),y: 37.1},
+                {x: moment().subtract(26, 'days'),y: 33.3},
+                {x: moment().subtract(24, 'days'),y: 33.75},
+                {x: moment().subtract(22, 'days'),y: 36.78},
+                {x: moment().subtract(20, 'days'),y: 31.79},
+                {x: moment().subtract(18, 'days'),y: 33.42},
+                {x: moment().subtract(16, 'days'),y: 32.9},
+                {x: moment().subtract(14, 'days'),y: 33.614},
+                {x: moment().subtract(12, 'days'),y: 33.69},
+                {x: moment().subtract(10, 'days'),y: 34.22},
+                {x: moment().subtract(8, 'days'),y: 34.22},
+                {x: moment().subtract(6, 'days'),y: 33.32},
+                {x: moment().subtract(4, 'days'),y: 32.5},
+                {x: moment().subtract(2, 'days'),y:  35.12},
+                {x: moment().format(),y:  32.72}],
+          showLine: true,
+          fill: false,
+          borderColor: 'rgba(200, 0, 200, 1)'
+        },
+        {
+          label: 'XRP',
+          data: [{x: moment().subtract(30, 'days'),y: 19},
+                {x: moment().subtract(28, 'days'),y: 17.32},
+                {x: moment().subtract(26, 'days'),y: 18.3},
+                {x: moment().subtract(24, 'days'),y: 17.75},
+                {x: moment().subtract(22, 'days'),y: 16.78},
+                {x: moment().subtract(20, 'days'),y: 11.79},
+                {x: moment().subtract(18, 'days'),y: 11.79},
+                {x: moment().subtract(16, 'days'),y: 13.42},
+                {x: moment().subtract(14, 'days'),y: 12.9},
+                {x: moment().subtract(12, 'days'),y: 13.614},
+                {x: moment().subtract(10, 'days'),y: 11.29},
+                {x: moment().subtract(8, 'days'),y: 11.12},
+                {x: moment().subtract(6, 'days'),y: 23},
+                {x: moment().subtract(4, 'days'),y: 24.7},
+                {x: moment().subtract(2, 'days'),y: 24.7},
+                {x: moment().format(),y:  21.12}],
+          showLine: true,
+          fill: false,
+          borderColor: 'rgba(200, 4, 0, 1)'
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Market cap in Billions (Num of shares * price per share)'
+      },
+  scales: {
+    xAxes: [{
+      type: 'time',
+      time: {
+        displayFormats: {
+          // 'millisecond': 'MMM DD',
+          // 'second': 'MMM DD',
+          // 'minute': 'MMM DD',
+          // 'hour': 'MMM DD',
+          'day': 'MMM DD',
+          // 'week': 'MMM DD',
+          // 'month': 'MMM DD',
+          // 'quarter': 'MMM DD',
+          // 'year': 'MMM DD',
+        }
+      }
+    }],
+    scales: {
+      yAxes: [{
+        scaleLabel: {
+        display: true,
+        labelString: 'probability',
+  },
+}],
+},
+      hover: {
+        mode: 'nearest',
+        intersect: true
+      },
+      ticks: {
+          beginAtZero:true
+          }
+        // }]
+      }
+    }
+  })
+// </script>
+
+// <main id="main">
+//
+// <script src="./src/index.js"></script>
